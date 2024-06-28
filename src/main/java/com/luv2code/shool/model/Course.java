@@ -15,9 +15,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Course {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "nameCourse")
     private String name;
     private String description;
     private String courseCode;
@@ -26,6 +28,7 @@ public class Course {
     @JoinColumn(name = "instructor_Id")
     private Instructor instructor;
 
+
     @ManyToMany
     @JoinTable(
             name = "student_course",
@@ -33,5 +36,4 @@ public class Course {
             inverseJoinColumns = @JoinColumn(name = "student_id")
     )
     private List<Student> students;
-
 }

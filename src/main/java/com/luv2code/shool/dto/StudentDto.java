@@ -5,6 +5,7 @@ import com.luv2code.shool.model.Student;
 import lombok.Builder;
 import lombok.Data;
 
+
 @Data
 @Builder
 public class StudentDto {
@@ -25,7 +26,7 @@ public class StudentDto {
                 .build();
     }
 
-    public static Student toEntity(StudentDto studentDto){
+    public  static Student toEntity(StudentDto studentDto){
         return Student
                 .builder()
                 .firstname(studentDto.getFirstname())
@@ -33,4 +34,6 @@ public class StudentDto {
                 .studentCode(studentDto.getStudentCode())
                 .build();
     }
+
+
 }

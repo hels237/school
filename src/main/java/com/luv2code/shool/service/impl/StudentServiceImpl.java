@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 @Service
 @RequiredArgsConstructor
@@ -41,6 +42,8 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Integer delete(Integer id) {
         studentRepository.deleteById(id);
-        return 0;
+        return id;
     }
+
+
 }
